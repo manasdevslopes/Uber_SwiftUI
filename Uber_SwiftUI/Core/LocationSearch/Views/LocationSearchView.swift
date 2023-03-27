@@ -9,8 +9,7 @@ import SwiftUI
 
 struct LocationSearchView: View {
   @State private var startLocationText = ""
-  @Binding var showLocationSearchView: Bool
-  
+  @Binding var mapState: MapViewState
   @EnvironmentObject var viewModel: LocationSearchViewModel
   
   var body: some View {
@@ -18,37 +17,26 @@ struct LocationSearchView: View {
       // header View
       HStack {
         VStack {
-          Circle()
-            .fill(Color(.systemGray3))
-            .frame(width: 6, height: 6)
+          Circle().fill(Color(.systemGray3)).frame(width: 6, height: 6)
           
-          Rectangle()
-            .fill(Color(.systemGray3))
-            .frame(width: 1, height: 24)
+          Rectangle().fill(Color(.systemGray3)).frame(width: 1, height: 24)
           
-          Rectangle()
-            .fill(.black)
-            .frame(width: 6, height: 6)
+          Rectangle().fill(.black).frame(width: 6, height: 6)
         }
         
         VStack {
           TextField("Current Location", text: $startLocationText)
-            .frame(height: 32)
-            .padding(.horizontal, 6)
-            .background(Color(.systemGroupedBackground))
+            .frame(height: 32).padding(.horizontal, 6).background(Color(.systemGroupedBackground))
             .padding(.trailing)
+          
           TextField("Where to?", text: $viewModel.queryFragment)
-            .frame(height: 32)
-            .padding(.horizontal, 6)
-            .background(Color(.systemGray4))
-            .padding(.trailing)
+            .frame(height: 32).padding(.horizontal, 6).background(Color(.systemGray4)).padding(.trailing)
         }
       }
       .padding(.horizontal)
       .padding(.top, 64)
       
-      Divider()
-        .padding(.vertical)
+      Divider().padding(.vertical)
       
       // List View
       ScrollView {
@@ -57,7 +45,7 @@ struct LocationSearchView: View {
             LocationSearchResultCell(title: result.title, subtitle: result.subtitle)
               .onTapGesture {
                 viewModel.selectedLocation(result)
-                showLocationSearchView.toggle()
+                mapState = .locationSelected
               }
           }
           if viewModel.results.isEmpty {
@@ -72,6 +60,7 @@ struct LocationSearchView: View {
 
 struct LocationSearchView_Previews: PreviewProvider {
   static var previews: some View {
-    LocationSearchView(showLocationSearchView: .constant(false))
+    LocationSearchView(mapState: .constant(.searchingForLocation))
+      .environmentObject(LocationSearchViewModel())
   }
 }

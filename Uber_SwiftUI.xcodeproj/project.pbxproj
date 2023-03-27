@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD3DE36129D1DA7400035880 /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DE36029D1DA7400035880 /* MapViewState.swift */; };
 		FD5977B22969786400CC2E21 /* Uber_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5977B12969786400CC2E21 /* Uber_SwiftUIApp.swift */; };
 		FD5977B62969786700CC2E21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD5977B52969786700CC2E21 /* Assets.xcassets */; };
 		FD5977B92969786700CC2E21 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD5977B82969786700CC2E21 /* Preview Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD3DE36029D1DA7400035880 /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
 		FD5977AE2969786400CC2E21 /* Uber_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uber_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD5977B12969786400CC2E21 /* Uber_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uber_SwiftUIApp.swift; sourceTree = "<group>"; };
 		FD5977B52969786700CC2E21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		FD5977C0296978C100CC2E21 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FD3DE36029D1DA7400035880 /* MapViewState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				FD5977DA2969955D00CC2E21 /* LocationSearchViewModel.swift in Sources */,
 				FD5977D629698DBC00CC2E21 /* LocationSearchView.swift in Sources */,
 				FD5977CC29697C6500CC2E21 /* LocationManager.swift in Sources */,
+				FD3DE36129D1DA7400035880 /* MapViewState.swift in Sources */,
 				FD5977D429698CCA00CC2E21 /* MapViewActionButton.swift in Sources */,
 				FD5977B22969786400CC2E21 /* Uber_SwiftUIApp.swift in Sources */,
 				FD5977CA296979C000CC2E21 /* UberMapViewRepresentable.swift in Sources */,
