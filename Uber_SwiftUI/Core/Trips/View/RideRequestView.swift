@@ -9,6 +9,14 @@ import SwiftUI
 
 struct RideRequestView: View {
   @State private var selectedRideType: RideType = .uberX
+  @State private var confirmRide: Bool = false
+  @State private var didConfirmedRide: Bool = false
+  
+  
+  
+  
+  
+  
   
   @EnvironmentObject var locationViewModel: LocationSearchViewModel
   
@@ -59,8 +67,8 @@ struct RideRequestView: View {
                 Text(locationViewModel.computeRidePrice(forType: rideType).toCurrency()).font(.system(size: 14, weight: .semibold))
               }.padding()
             }.frame(width: 112, height: 140)
-              .foregroundColor(selectedRideType == rideType ? .white : .black)
-              .background(Color(selectedRideType == rideType ? .systemBlue : .systemGroupedBackground))
+              .foregroundColor(selectedRideType == rideType ? .white : Color.theme.primaryTextColor)
+              .background(selectedRideType == rideType ? Color(.systemBlue) : Color.theme.secondaryBackgroundColor)
               .scaleEffect(selectedRideType == rideType ? 1.2 : 1.0)
               .cornerRadius(10)
               .onTapGesture {
@@ -82,18 +90,38 @@ struct RideRequestView: View {
         Spacer()
         Image(systemName: "chevron.right").imageScale(.medium).padding()
       }
-      .frame(height: 50).background(Color(.systemGroupedBackground)).cornerRadius(10).padding(.horizontal)
+      .frame(height: 50).background(Color.theme.secondaryBackgroundColor).cornerRadius(10).padding(.horizontal)
       
       // request ride button
-      Button {
-        
-      } label: {
-        Text("CONFIRM RIDE").fontWeight(.bold).frame(width: UIScreen.main.bounds.width - 32, height: 50)
-          .background(.blue).cornerRadius(10).foregroundColor(.white)
+      //      Button { } label: {
+      //        Text("CONFIRM RIDE").fontWeight(.bold).frame(width: UIScreen.main.bounds.width - 32, height: 50)
+      //          .background(.blue).cornerRadius(10).foregroundColor(.white)
+      //      }
+      
+      if confirmRide {
+        SwipeToRequestRideView()
+          .onSwipeSuccess {
+            self.didConfirmedRide = true
+            self.confirmRide = false
+          }
+          .transition(AnyTransition.scale.animation(Animation.spring(response: 0.3, dampingFraction: 0.5)))
       }
       
+      if didConfirmedRide {
+        ProgressView()
+          .transition(AnyTransition.scale.animation(Animation.spring(response: 0.5, dampingFraction: 0.5)))
+          .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+              self.didConfirmedRide = false
+              self.confirmRide = true
+            }
+          }
+      }
     }
-    .padding(.bottom, 24).background(.white).cornerRadius(16)
+    .padding(.bottom, 24).background(Color.theme.backgroundColor).cornerRadius(16)
+    .onAppear {
+      self.confirmRide = true
+    }
   }
 }
 
