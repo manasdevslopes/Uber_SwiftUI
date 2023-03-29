@@ -33,7 +33,7 @@ struct SwipeToRequestRideView: View {
       ZStack {
         Capsule().frame(width: thumbSize.width, height: thumbSize.height)
           .foregroundColor(Color.theme.buttonPrimaryColor)
-        Image(systemName: "arrow.right").foregroundColor(Color.theme.backgroundColor)
+        Image(systemName: "chevron.right.2").font(.system(size: 25)).foregroundColor(.black)
       }
       .offset(x: getDragOffsetX(), y: 0)
       .animation(Animation.spring(response: 0.3, dampingFraction: 0.8), value: dragOffset)

@@ -116,6 +116,7 @@ struct RideRequestView: View {
               self.confirmRide = true
             }
           }
+          .tint(Color.theme.buttonSecondaryColor)
       }
     }
     .padding(.bottom, 24).background(Color.theme.backgroundColor).cornerRadius(16)
