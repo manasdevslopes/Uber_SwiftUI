@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FD3DE36129D1DA7400035880 /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3DE36029D1DA7400035880 /* MapViewState.swift */; };
+		FD443CE929E838D10008A890 /* ShimmerEffectModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD443CE829E838D10008A890 /* ShimmerEffectModifier.swift */; };
 		FD526E5229D3105F001A9EBE /* RideRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD526E5129D3105F001A9EBE /* RideRequestView.swift */; };
 		FD526E5429D3348A001A9EBE /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD526E5329D3348A001A9EBE /* RideType.swift */; };
 		FD526E5629D44E0A001A9EBE /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD526E5529D44E0A001A9EBE /* Double+Extensions.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		FD3DE36029D1DA7400035880 /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
+		FD443CE829E838D10008A890 /* ShimmerEffectModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerEffectModifier.swift; sourceTree = "<group>"; };
 		FD526E5129D3105F001A9EBE /* RideRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideRequestView.swift; sourceTree = "<group>"; };
 		FD526E5329D3348A001A9EBE /* RideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideType.swift; sourceTree = "<group>"; };
 		FD526E5529D44E0A001A9EBE /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
@@ -64,6 +66,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD443CE729E838BB0008A890 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FD443CE829E838D10008A890 /* ShimmerEffectModifier.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		FD526E4E29D3103F001A9EBE /* Trips */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				FD5977B12969786400CC2E21 /* Uber_SwiftUIApp.swift */,
+				FD443CE729E838BB0008A890 /* Helpers */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -300,6 +311,7 @@
 				FD5977D429698CCA00CC2E21 /* MapViewActionButton.swift in Sources */,
 				FD5977B22969786400CC2E21 /* Uber_SwiftUIApp.swift in Sources */,
 				FD5977CA296979C000CC2E21 /* UberMapViewRepresentable.swift in Sources */,
+				FD443CE929E838D10008A890 /* ShimmerEffectModifier.swift in Sources */,
 				FD5977C82969794200CC2E21 /* HomeView.swift in Sources */,
 				FD526E5829D45215001A9EBE /* UberLocation.swift in Sources */,
 				FD526E5E29D47544001A9EBE /* Comparable+Extensions.swift in Sources */,

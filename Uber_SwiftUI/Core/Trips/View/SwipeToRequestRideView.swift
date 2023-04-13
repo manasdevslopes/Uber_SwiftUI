@@ -29,6 +29,8 @@ struct SwipeToRequestRideView: View {
       Text("Swipe to confirm ride")
         .fontWeight(.semibold).foregroundColor(.black).offset(x: 30, y: 0)
         .opacity(Double(1 - ( (self.dragOffset.width * 2) / self.trackSize.width )))
+        .shimmer(.init(tint: .black.opacity(0.2), highlight: .black, blur: 5))
+      
       // Thumb
       ZStack {
         Capsule().frame(width: thumbSize.width, height: thumbSize.height)
